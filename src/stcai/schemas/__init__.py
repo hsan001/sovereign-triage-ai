@@ -1,4 +1,10 @@
-"""Telemetry, audit, triage, and detection schemas for S-TCAI."""
+"""Telemetry, audit, triage, detection, and compliance schemas for S-TCAI."""
+from stcai.schemas.compliance import (
+    ComplianceStatus,
+    DescIsrComplianceReport,
+    DescIsrControlMapping,
+    StatutoryLegalAssessment,
+)
 from stcai.schemas.detection import (
     SigmaLogSource,
     SynthesizedDetectionBundle,
@@ -25,6 +31,10 @@ from stcai.schemas.triage import (
 )
 
 __all__ = [
+    "ComplianceStatus",
+    "DescIsrComplianceReport",
+    "DescIsrControlMapping",
+    "StatutoryLegalAssessment",
     "EventCategory",
     "EventOutcome",
     "FileActivityContext",
