@@ -1,4 +1,4 @@
-"""Telemetry and audit schemas for S-TCAI."""
+"""Telemetry, audit, and triage schemas for S-TCAI."""
 from stcai.schemas.telemetry import (
     EventCategory,
     EventOutcome,
@@ -10,6 +10,14 @@ from stcai.schemas.telemetry import (
     ProcessLineageContext,
     TelemetrySourceType,
     UserIdentityContext,
+)
+from stcai.schemas.triage import (
+    ExtractedIOC,
+    IncidentSeverity,
+    IncidentTriageReport,
+    MitreTechniqueMapping,
+    SovereignResidencyMetadata,
+    TriageVerdict,
 )
 
 __all__ = [
@@ -23,4 +31,10 @@ __all__ = [
     "ProcessLineageContext",
     "TelemetrySourceType",
     "UserIdentityContext",
+    "ExtractedIOC",
+    "IncidentSeverity",
+    "IncidentTriageReport",
+    "MitreTechniqueMapping",
+    "SovereignResidencyMetadata",
+    "TriageVerdict",
 ]
