@@ -1,0 +1,10 @@
+node=sov-linux-node01 type=SYSCALL msg=audit(1731430000.100:501): arch=c000003e syscall=59 success=yes exit=0 a0=7ffd12 a1=7ffd18 a2=7ffd20 a3=0 items=1 ppid=1200 pid=2100 auid=1001 uid=33 gid=33 euid=0 suid=0 fsuid=0 ses=12 comm="python3" exe="/usr/bin/python3" key="privesc_exploit"
+node=sov-linux-node01 type=PROCTITLE msg=audit(1731430000.100:501): proctitle=2F7573722F62696E2F707974686F6E33002D6300696D706F727420707479
+node=sov-linux-node01 type=CWD msg=audit(1731430000.100:501): cwd="/var/www/html"
+node=sov-linux-node01 type=PATH msg=audit(1731430000.100:501): item=0 name="/usr/bin/python3" inode=135123 dev=08:01 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL
+node=sov-linux-node01 type=SYSCALL msg=audit(1731430001.200:502): arch=c000003e syscall=42 success=yes exit=0 a0=3 a1=7ffd40 a2=10 a3=0 items=0 ppid=1200 pid=2100 auid=1001 uid=33 gid=33 euid=0 suid=0 fsuid=0 ses=12 comm="python3" exe="/usr/bin/python3" key="c2_connect"
+node=sov-linux-node01 type=SOCKADDR msg=audit(1731430001.200:502): saddr=020001BB0A0A0A050000000000000000
+node=sov-linux-node01 type=SYSCALL msg=audit(1731430002.300:503): arch=c000003e syscall=59 success=yes exit=0 a0=7ffd50 a1=7ffd58 a2=7ffd60 a3=0 items=1 ppid=2100 pid=2105 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 ses=4294967295 comm="sh" exe="/bin/dash" key="child_shell"
+node=sov-linux-node01 type=EXECVE msg=audit(1731430002.300:503): argc=2 a0="/bin/sh" a1="-i"
+node=sov-linux-node01 type=CWD msg=audit(1731430002.300:503): cwd="/root"
+node=sov-linux-node01 type=PATH msg=audit(1731430002.300:503): item=0 name="/bin/dash" inode=12034 dev=08:01 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL
