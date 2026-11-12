@@ -1,0 +1,32 @@
+name: S-TCAI Sovereign CI & DESC ISR Compliance Suite
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Package & Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Run 44-Test Pytest Suite Across All 5 Modules & CLI
+        run: pytest -v
+
+      - name: Verify CLI Evidence Generation
+        run: |
+          python -m stcai.cli -i tests/fixtures/sysmon_attack_chain.json -s sysmon -c critical_sovereign -o /tmp/sysmon_dossier.md
+          python -m stcai.cli -i tests/fixtures/auditd_privesc_chain.log -s auditd -c high -o /tmp/auditd_dossier.md
