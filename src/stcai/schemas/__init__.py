@@ -1,4 +1,8 @@
-"""Telemetry, audit, and triage schemas for S-TCAI."""
+"""Telemetry, audit, triage, and detection schemas for S-TCAI."""
+from stcai.schemas.detection import (
+    SigmaLogSource,
+    SynthesizedDetectionBundle,
+)
 from stcai.schemas.telemetry import (
     EventCategory,
     EventOutcome,
@@ -37,4 +41,6 @@ __all__ = [
     "MitreTechniqueMapping",
     "SovereignResidencyMetadata",
     "TriageVerdict",
+    "SigmaLogSource",
+    "SynthesizedDetectionBundle",
 ]
